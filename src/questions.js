@@ -5,7 +5,7 @@ const questions = [
     'How long is the loan for',
     'Do you have to give a down payment?',
     'How much do you think the car is worth?',
-    'Are there other costs'
+    'Are there other costs?'
 ];
 
 
