@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import header from './img/fnf-header.png';
 import './App.css';
 import { Grid, Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
+import LoanQuestions from './LoanQuestions'
 import questions from './questions'
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         <p className="App-intro">
           Get some help decoding all the financial mumbo-jumbo!
         </p>
+        <LoanQuestions questions={this.state.questions} />
         <Grid>
           <Row className="show-grid">
             <Col md={4} xs={6}><Button bsStyle="primary">Car Loans</Button></Col>
