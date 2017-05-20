@@ -6,3 +6,5 @@ const userDetails = {
     },
     stars: 3
 }
+
+export default userDetails
