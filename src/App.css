@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .App-header {
