@@ -1,12 +1,8 @@
 
 
-
 var loanFactors = {
-    principle = [],
-    termLength = [],
-    interestRate = [],
-    standardRates = 0.04,
-    percentile = 0.02,
+    standardRate: 0.04,
+    percentile: 0.02,
     calculateMonthlyRepayments: (principle, interestRate, termLength) => {
         return principle*(interestRate/12)/(1-Math.pow(1+interestRate/12,-termLength));
     },
@@ -25,5 +21,7 @@ var loanFactors = {
     //     }
     // },
 }
+module.exports =loanFactors;
+// export default loanFactors;
 
-export default loanFactors;
+// console.log(loanFactors.calculateMonthlyRepayments(1500,0.03,60));
