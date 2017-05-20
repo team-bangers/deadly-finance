@@ -8,7 +8,7 @@ var loanFactors = {
     // interestRate %/annum
     // termLength in months
     // fees in $/month
-    // income in $
+    // currentIncome in $
     calculateMonthlyRepayments: (principal, interestRate, termLength, fees) => { // termLength in months
         return fees+Math.ceil((principal*(interestRate/12))/(1-Math.pow(1+interestRate/12,-termLength)));
     },
@@ -20,6 +20,9 @@ var loanFactors = {
         if (monthlyRepayments > loanFactors.goodIncomePortion*currentIncome){
             return true;
         } return false;
+    },
+    incomeOverPeriod: (termLength, currentIncome) => {
+        return currentIncome * termLength;
     },
 }
 module.exports =loanFactors;

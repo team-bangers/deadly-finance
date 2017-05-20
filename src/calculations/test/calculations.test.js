@@ -30,3 +30,7 @@ test('monthly payments 15000P, 0.03I, 60months,0 fees and current income 900 to 
   expect(loanFactors.isloanTooHigh(15000, 0.03,60,0, 900)).toBe(false);
 });
 
+// test total income over term length
+test('total income of $8000/month over 60 month term', ()=>{
+  expect(loanFactors.incomeOverPeriod(60, 8000)).toBe(480000);
+});
