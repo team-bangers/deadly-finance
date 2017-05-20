@@ -15,6 +15,7 @@ class App extends Component {
     };
 
     this.displayQuestions = this.displayQuestions.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   displayQuestions() {
@@ -22,7 +23,8 @@ class App extends Component {
   }
 
   handleSubmit(answer) {
-    const answers = this.state.answers.slice(0).push(answer)
+    const answers = this.state.answers.slice(0)
+    answers.push(answer)
     this.setState({
       answers
     })
@@ -68,7 +70,7 @@ class App extends Component {
           <p className="App-intro">
             Get some help decoding all the financial mumbo-jumbo!
           </p>
-          <LoanQuestions questions={this.state.questions} />;    
+          <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;    
         </div>
       ) 
   }

@@ -14,7 +14,7 @@ class LoanQuestions extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.handleSubmit()
+    this.props.handleSubmit(this.state.value)
   }
 
   handleChange(e) {
@@ -24,12 +24,17 @@ class LoanQuestions extends React.Component {
   }
 
   getValidationState() {
+    if (isNaN(parseInt(this.state.value))) {
+      return 'error'
+    } else {
+      return 'success'
+    }
   }
 
   render() {
     const questions = this.props.questions
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <FormGroup
           controlId="formBasicText"
           validationState={this.getValidationState()}
