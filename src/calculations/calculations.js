@@ -2,26 +2,24 @@
 
 var loanFactors = {
     standardRate: 0.04,
-    percentile: 0.02,
-    calculateMonthlyRepayments: (principle, interestRate, termLength) => {
-        return principle*(interestRate/12)/(1-Math.pow(1+interestRate/12,-termLength));
+    healthyRange: 0.02,
+    goodIncomePortion: 0.3,
+    // principal in $
+    // interestRate %/annum
+    // termLength in months
+    // fees in $/month
+    // income in $
+    calculateMonthlyRepayments: (principal, interestRate, termLength, fees) => { // termLength in months
+        return fees+Math.ceil((principal*(interestRate/12))/(1-Math.pow(1+interestRate/12,-termLength)));
     },
-    // calculateTotalRepayment:function(){
-    //     return 
-    // },
-    // compareToStandardRates: function(){
-    //     if (loanFactors.interestedRate > loanFactors.standardRates + percentile){
-
-    //     } 
-    //     else if (loanFactors.interestRate < loanFactors.standardRates - percentile){
-
-    //     }
-    //     else {
-
-    //     }
-    // },
+    calculateTotalRepayment: (principal, interestRate, termLength, fees) => {
+        return Math.ceil(termLength*(fees+(principal*(interestRate/12))/(1-Math.pow(1+interestRate/12,-termLength))));
+    },
+    isloanTooHigh: (principal, interestRate, termLength, fees, currentIncome) =>{
+        var monthlyRepayments = fees+Math.ceil((principal*(interestRate/12))/(1-Math.pow(1+interestRate/12,-termLength)));
+        if (monthlyRepayments > loanFactors.goodIncomePortion*currentIncome){
+            return true;
+        } return false;
+    },
 }
 module.exports =loanFactors;
-// export default loanFactors;
-
-// console.log(loanFactors.calculateMonthlyRepayments(1500,0.03,60));

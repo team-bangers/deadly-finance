@@ -1,11 +1,11 @@
 const questions = [
-    'How much is the loan for?',
-    'Do you know the interest rate?',
-    'What is the interest rate?',
-    'How long is the loan for',
-    'Do you have to give a down payment?',
-    'How much do you think the car is worth?',
-    'Are there other costs?'
+    {q:'How much is the loan for?'},
+    {q:'Do you know the interest rate?'},
+    {q:'What is the interest rate?'},
+    {q:'How long is the loan for'},
+    {q:'Do you have to give a down payment?'},
+    {q:'How much do you think the car is worth?'},
+    {q:'Are there other costs?'},
 ];
 
 
