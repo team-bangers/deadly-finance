@@ -11,7 +11,7 @@ class LoanQuestions extends React.Component {
   }
 
   handleSubmit(answer, questionIndex) {
-    this.props.handleSubmit(this.state.value, this.props.questionIndex)
+    this.props.handleSubmit(answer, questionIndex)
     this.setState(prevState => ({
       questionNumber: prevState.questionNumber + 1,
     }))

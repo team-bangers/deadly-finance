@@ -19,7 +19,9 @@ class App extends Component {
   }
 
   displayQuestions() {
-    this.setState({ homeView: false });
+    this.setState(prevState => ({
+      homeView: !prevState.homeView
+    }));
   }
 
   handleSubmit(answer, questionIndex) {
