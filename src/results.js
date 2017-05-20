@@ -16,15 +16,19 @@ export default function Results(props) {
             starCount = 1;
             break;
         case 2:
+            gif = <p>"Housewives of Narromine"</p>
             starCount = 2;
             break;
         case 3:
+            gif = <p>"Something"</p>
             starCount = 3;
             break;
         case 4:
+            gif = <p>"Something"</p>
             starCount = 4;
             break;
         case 5:
+            gif= <p>"Kathy Freeman"</p>;
             starCount = 5;
             break;
         default:
