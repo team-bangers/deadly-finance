@@ -23,7 +23,19 @@ class App extends Component {
         </p>
         <Grid>
           <Row className="show-grid">
-            <Col md={4} xs={6}><ButtonToolbar><Button bsStyle="primary">Car Loans</Button></ButtonToolbar></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Car Loans</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Home Loans</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Payday Loans</Button></Col>
+          </Row>
+          <Row className="show-grid">
+            <Col md={4} xs={6}><Button bsStyle="primary">Personal Loans</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Cash Advance</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Super Annuation</Button></Col>
+          </Row>
+          <Row className="show-grid">
+            <Col md={4} xs={6}><Button bsStyle="primary">Term Deposit</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Bonds</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary">Stocks</Button></Col>
           </Row>
         </Grid>
       </div>
