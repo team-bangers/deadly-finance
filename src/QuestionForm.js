@@ -32,9 +32,13 @@ class QuestionForm extends React.Component {
   }
 
   render () {
-    const question = this.props.questions[this.props.questionIndex]
+    const { question, index } = this.props
+    const style = {
+      transform: this.props.transition ? 'translateY(0px)' : 'translateY(500px)',
+      transition: 'transform 1s',
+    }
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} style={style}>
         <FormGroup
           controlId="formBasicText"
           validationState={this.getValidationState()}

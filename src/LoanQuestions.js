@@ -5,15 +5,34 @@ class LoanQuestions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questionNumber: 1,
+      questionNumber: 0,
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(answer, questionIndex) {
+    this.props.handleSubmit(this.state.value, this.props.questionIndex)
+    this.setState(prevState => ({
+      questionNumber: prevState.questionNumber + 1,
+    }))
   }
 
   render() {
     return (
       <div>
-        <QuestionForm questions={this.props.questions} questionIndex={0} handleSubmit={this.props.handleSubmit} />
-        <QuestionForm questions={this.props.questions} questionIndex={1} handleSubmit={this.props.handleSubmit} />
+        {
+          this.props.questions.map((question, index) => {
+            return (
+              <QuestionForm
+                key={question.q}
+                question={question}
+                questionIndex={index}
+                transition={this.state.questionNumber >= index}
+                handleSubmit={this.handleSubmit}
+              />
+            )
+          })
+        }
       </div>
     )
   }
