@@ -19,7 +19,7 @@ class LoanQuestions extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ overflow: 'hidden' }}>
         {
           this.props.questions.map((question, index) => {
             return (
