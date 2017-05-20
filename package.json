@@ -11,6 +11,7 @@
   "devDependencies": {
     "jest": "^20.0.3",
     "rc-slider": "^7.0.8",
+    "react-player": "^0.18.0",
     "react-scripts": "1.0.1"
   },
   "scripts": {
