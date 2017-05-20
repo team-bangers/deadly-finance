@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import header from './img/fnf-header.png';
 import './App.css';
 import { Grid, Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
+import questions from './questions'
 
 class App extends Component {
+  constructor () {
+    super();
+    this.state = {
+      questions
+    };
+  }
   render() {
     return (
       <div className="App">
