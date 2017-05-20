@@ -8,4 +8,5 @@ const questions = [
     'Are there other costs'
 ];
 
+
 export default questions;
