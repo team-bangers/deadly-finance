@@ -45,11 +45,11 @@ class App extends Component {
           <Row className="show-grid">
             <Col md={4}><Button bsStyle="primary" onClick={this.displayQuestions}>Car Loans</Button></Col>
             <Col md={4}><Button bsStyle="primary">Home Loans</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Payday Loans</Button></Col>
+            <Col md={4}><Button bsStyle="primary">Business Loans</Button></Col>
           </Row>
           <Row className="show-grid">
             <Col md={4}><Button bsStyle="primary">Personal Loans</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Cash Advance</Button></Col>
+            <Col md={4}><Button bsStyle="primary">Credit Card</Button></Col>
             <Col md={4}><Button bsStyle="primary">Super Annuation</Button></Col>
           </Row>
           <Row className="show-grid">
