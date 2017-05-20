@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGroup, FormControl, HelpBlock, ControlLabel } from 'react-bootstrap'
+import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 class QuestionForm extends React.Component {
   constructor(props) {
@@ -7,7 +7,6 @@ class QuestionForm extends React.Component {
     this.state = {
       value: ''
     }
-
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
@@ -24,7 +23,7 @@ class QuestionForm extends React.Component {
   }
 
   getValidationState() {
-    if (isNaN(parseInt(this.state.value))) {
+    if (isNaN(parseInt(this.state.value, 10))) {
       return 'error'
     } else {
       return 'success'
@@ -32,7 +31,6 @@ class QuestionForm extends React.Component {
   }
 
   render () {
-    const { question, index } = this.props
     const style = {
       transform: this.props.transition ? 'translateY(0px)' : 'translateY(500px)',
       transition: 'transform 1s',
@@ -43,7 +41,7 @@ class QuestionForm extends React.Component {
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>{question.q}</ControlLabel>
+          <ControlLabel>{this.props.question.q}</ControlLabel>
           <FormControl
             type="text"
             value={this.state.value}

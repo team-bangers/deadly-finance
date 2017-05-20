@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import header from './img/fnf-header.png';
 import './App.css';
-import { Grid, Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 import LoanQuestions from './LoanQuestions';
 import questions from './questions';
 import Results from './results';
