@@ -9,12 +9,21 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
+      homeView: true,
       questions
     };
+
+    this.displayQuestions = this.displayQuestions.bind(this);
   }
+
+  displayQuestions() {
+    this.setState({ homeView: false });
+  }
+
   render() {
-    return (
-      <div className="App">
+    if (this.state.homeView) {
+      return (
+        <div className="App">
         <div className="App-header">
           <img src={header} className="App-logo" alt="logo" />
           <h2>Are you being screwed?</h2>
@@ -22,10 +31,9 @@ class App extends Component {
         <p className="App-intro">
           Get some help decoding all the financial mumbo-jumbo!
         </p>
-        <LoanQuestions questions={this.state.questions} />
         <Grid>
           <Row className="show-grid">
-            <Col md={4} xs={6}><Button bsStyle="primary">Car Loans</Button></Col>
+            <Col md={4} xs={6}><Button bsStyle="primary" onClick={this.displayQuestions}>Car Loans</Button></Col>
             <Col md={4} xs={6}><Button bsStyle="primary">Home Loans</Button></Col>
             <Col md={4} xs={6}><Button bsStyle="primary">Payday Loans</Button></Col>
           </Row>
@@ -40,8 +48,21 @@ class App extends Component {
             <Col md={4} xs={6}><Button bsStyle="primary">Stocks</Button></Col>
           </Row>
         </Grid>
-      </div>
-    );
+        </div>
+      )
+    } 
+      return (
+        <div className="App">
+          <div className="App-header">
+            <img src={header} className="App-logo" alt="logo" />
+            <h2>Are you being screwed?</h2>
+          </div>
+          <p className="App-intro">
+            Get some help decoding all the financial mumbo-jumbo!
+          </p>
+          <LoanQuestions questions={this.state.questions} />;    
+        </div>
+      ) 
   }
 }
 
