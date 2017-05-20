@@ -61,7 +61,7 @@ class App extends Component {
             <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
           </Row>
         </Grid>
-        <Results stars={1} />
+        <Results stars={2} />
         </div>
       )
     } 

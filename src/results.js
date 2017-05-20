@@ -16,7 +16,12 @@ export default function Results(props) {
             starCount = 1;
             break;
         case 2:
-            gif = <p>"Housewives of Narromine"</p>
+            gif = (
+                <div>
+                    <iframe src="https://giphy.com/embed/YaoEnNsrYoBKE" width="480" height="264" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/black-comedy-housewives-of-narromine-YaoEnNsrYoBKE">via GIPHY</a></p>
+                </div>
+            );
             starCount = 2;
             break;
         case 3:
