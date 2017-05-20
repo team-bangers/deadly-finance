@@ -17,8 +17,6 @@ class App extends Component {
         <Grid>
           <Row className="show-grid">
             <Col md={4} xs={6}><ButtonToolbar><Button bsStyle="primary">Car Loans</Button></ButtonToolbar></Col>
-            <Col md={4} xs={6}>Home Loans</Col>
-            <Col md={4} xs={6}>Credit Cards</Col>
           </Row>
         </Grid>
       </div>
