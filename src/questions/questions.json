@@ -2,27 +2,10 @@
     {
         "1": "How much is the loan for?",
         "2": "Do you know the interest rate?",
-        "3": "What is the interest rate?"
+        "3": "What is the interest rate?",
+        "4": "How long is the loan for",
+        "5": "Do you have to give a down payment?",
+        "6": "How much do you think the car is worth?",
+        "7": "Are there other costs?"
     }
 ]
-
-
-
-How much is the loan
-
-How long do I have to pay off the loan
-
-What is the down payment
-
-Are there any other costs?
-
-What is the interest rate on the loan?
-
-
-
-
-How much do you need to borrow?
-
-Do you know the interest rate of the loan?
-
-What is the interest rate of the loan?
