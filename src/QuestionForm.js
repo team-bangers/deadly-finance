@@ -14,10 +14,7 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.handleSubmit(this.state.value)
-    this.setState(prevState => ({
-      questionNumber: prevState.questionNumber + 1,
-    }))
+    this.props.handleSubmit(this.state.value, this.props.questionIndex)
   }
 
   handleChange(e) {
@@ -35,14 +32,14 @@ class QuestionForm extends React.Component {
   }
 
   render () {
-    const question = this.props.question
+    const question = this.props.questions[this.props.questionIndex]
     return (
       <form onSubmit={this.handleSubmit}>
         <FormGroup
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>{question}</ControlLabel>
+          <ControlLabel>{question.q}</ControlLabel>
           <FormControl
             type="text"
             value={this.state.value}

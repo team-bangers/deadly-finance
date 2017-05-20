@@ -12,8 +12,8 @@ class LoanQuestions extends React.Component {
   render() {
     return (
       <div>
-        <QuestionForm question={this.props.questions[0]} handleSubmit={this.props.handleSubmit} />
-        <QuestionForm question={this.props.questions[1]} handleSubmit={this.props.handleSubmit} />
+        <QuestionForm questions={this.props.questions} questionIndex={0} handleSubmit={this.props.handleSubmit} />
+        <QuestionForm questions={this.props.questions} questionIndex={1} handleSubmit={this.props.handleSubmit} />
       </div>
     )
   }
