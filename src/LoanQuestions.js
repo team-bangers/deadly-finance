@@ -13,7 +13,8 @@ class LoanQuestions extends React.Component {
   }
 
   handleSubmit() {
-    this.props.handleSubmit();
+    e.preventDefault()
+    this.props.handleSubmit()
   }
 
   handleChange(e) {

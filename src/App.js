@@ -10,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       homeView: true,
-      questions
+      questions,
+      answers,
     };
 
     this.displayQuestions = this.displayQuestions.bind(this);
@@ -18,6 +19,13 @@ class App extends Component {
 
   displayQuestions() {
     this.setState({ homeView: false });
+  }
+
+  handleSubmit() {
+    const answers = this.state.answers.slice(0).push(answer)
+    this.setState({
+      answers
+    })
   }
 
   render() {
