@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import header from './img/fnf-header.png';
 import './App.css';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
         </p>
         <Grid>
           <Row className="show-grid">
-            <Col md={4} xs={6}>Car Loans</Col>
+            <Col md={4} xs={6}><ButtonToolbar><Button bsStyle="primary">Car Loans</Button></ButtonToolbar></Col>
             <Col md={4} xs={6}>Home Loans</Col>
             <Col md={4} xs={6}>Credit Cards</Col>
           </Row>
