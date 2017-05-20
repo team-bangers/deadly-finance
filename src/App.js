@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import header from './img/fnf-header.png';
 import './App.css';
 import { Grid, Row, Col, Button, ButtonToolbar } from 'react-bootstrap';
-import LoanQuestions from './LoanQuestions'
-import questions from './questions'
+import LoanQuestions from './LoanQuestions';
+import questions from './questions';
+import Results from './results';
 
 class App extends Component {
   constructor () {
@@ -56,6 +57,7 @@ class App extends Component {
             <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
           </Row>
         </Grid>
+        <Results stars={1} />
         </div>
       )
     } 
