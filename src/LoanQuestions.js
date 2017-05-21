@@ -35,6 +35,8 @@ class LoanQuestions extends React.Component {
               onChange={this.handleSubmit}
             />
             {this.props.value}%
+            {this.props.value > 10 && this.props.value < 20 && <div>This interest rate is getting a bit high. It might not be the best loan</div>}
+            {this.props.value >= 20 && <div>Woah, that interest rate is high. You're getting screwed!</div>}
           </FormGroup>
         </form>
       </div>
