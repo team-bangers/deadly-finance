@@ -4,7 +4,7 @@ import './App.css';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 // import ReactPlayer from 'react-player'
 import LoanQuestions from './LoanQuestions';
-import questions from './questions';
+// import questions from './questions';
 import Results from './Results';
 
 class App extends Component {

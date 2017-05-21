@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGroup, FormControl, ControlLabel, ButtonToolbar, Button } from 'react-bootstrap'
+import { FormGroup, ControlLabel } from 'react-bootstrap'
 import Slider from 'rc-slider'
 
 import 'rc-slider/assets/index.css';
