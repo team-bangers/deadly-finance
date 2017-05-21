@@ -29,5 +29,11 @@
 
 .loanQuestionsContainer {
   transition:
-    opacity 1s
+    opacity 1s,
+    transform 1s;
+}
+
+.video {
+  margin: 0 auto;
+  padding: 10px;
 }

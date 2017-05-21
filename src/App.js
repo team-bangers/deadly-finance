@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import header from './img/fnf-header.png';
 import './App.css';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
-// import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player'
 import LoanQuestions from './LoanQuestions';
 // import questions from './questions';
 import Results from './Results';
@@ -43,7 +43,7 @@ class App extends Component {
             <p className="App-intro">
               Get some help decoding all the financial mumbo-jumbo!
             </p>
-            {/*<ReactPlayer url='https://www.youtube.com/watch?v=L16ZUH-sCGc' />*/}
+            <ReactPlayer className='video' url='https://www.youtube.com/embed/7daI_Btr97A' />
             <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
             <Grid>
               <Row className="show-grid">
