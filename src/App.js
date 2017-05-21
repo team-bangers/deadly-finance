@@ -4,7 +4,7 @@ import './App.css';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import ReactPlayer from 'react-player'
 import LoanQuestions from './LoanQuestions';
-import questions from './questions';
+// import questions from './questions';
 import Results from './Results';
 
 class App extends Component {
@@ -12,13 +12,7 @@ class App extends Component {
     super();
     this.state = {
       homeView: true,
-      homeContainerStyle: {
-        opacity: 1
-      },
-      loanQuestionsContainer: {
-        opacity: 0
-      },
-      questions,
+      answer: 0,
     };
 
     this.displayQuestions = this.displayQuestions.bind(this);
@@ -27,24 +21,13 @@ class App extends Component {
 
   displayQuestions() {
     this.setState(prevState => ({
-      // homeView: !prevState.homeView,
-      homeContainerStyle: {
-        opacity: 0,
-        transform: 'translateX(-1000px)'
-      },
-      loanQuestionsContainer: {
-        opacity: 1,
-        transform: 'translateY(-1350px)',
-      }
+      homeView: !prevState.homeView,
     }));
   }
 
-  handleSubmit(answer, questionIndex) {
-    const question = Object.assign({}, this.state.questions[questionIndex], {a: answer})
-    const newQuestionsArray = this.state.questions.slice(0)
-    newQuestionsArray[questionIndex] = question
+  handleSubmit(answer) {
     this.setState({
-      questions: newQuestionsArray
+      answer,
     })
   }
 
@@ -81,9 +64,6 @@ class App extends Component {
             </Grid>
             <Results stars={1} />
           </div>
-          <div className='loanQuestionsContainer' style={this.state.loanQuestionsContainer}>
-            <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;
-          </div>
         </div>
       )
     } 
@@ -96,7 +76,7 @@ class App extends Component {
           <p className="App-intro">
             Get some help decoding all the financial mumbo-jumbo!
           </p>
-              
+          <LoanQuestions value={this.state.answer} questions={this.state.questions} handleSubmit={this.handleSubmit} />
         </div>
       ) 
   }
