@@ -20,3 +20,15 @@
   margin: 20px;
   width: 200px;
 }
+
+.homeContainer {
+  transition:
+    opacity 1s,
+    transform 1s 1s;
+}
+
+.loanQuestionsContainer {
+  transition:
+    opacity 1s,
+    transform 1s;
+}

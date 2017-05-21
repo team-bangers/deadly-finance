@@ -12,6 +12,12 @@ class App extends Component {
     super();
     this.state = {
       homeView: true,
+      homeContainerStyle: {
+        opacity: 1
+      },
+      loanQuestionsContainer: {
+        opacity: 0
+      },
       questions,
     };
 
@@ -21,7 +27,15 @@ class App extends Component {
 
   displayQuestions() {
     this.setState(prevState => ({
-      homeView: !prevState.homeView
+      // homeView: !prevState.homeView,
+      homeContainerStyle: {
+        opacity: 0,
+        transform: 'translateX(-1000px)'
+      },
+      loanQuestionsContainer: {
+        opacity: 1,
+        transform: 'translateY(-1350px)',
+      }
     }));
   }
 
@@ -38,33 +52,38 @@ class App extends Component {
     if (this.state.homeView) {
       return (
         <div className="App">
-        <div className="App-header">
-          <img src={header} className="App-logo" alt="logo" />
-          <h2>Are you being screwed?</h2>
-        </div>
-        <p className="App-intro">
-          Get some help decoding all the financial mumbo-jumbo!
-        </p>
-        {/*<ReactPlayer url='https://www.youtube.com/watch?v=L16ZUH-sCGc' />*/}
-        <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
-        <Grid>
-          <Row className="show-grid">
-            <Col md={4}><Button bsStyle="primary" onClick={this.displayQuestions}>Car Loans</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Home Loans</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Business Loans</Button></Col>
-          </Row>
-          <Row className="show-grid">
-            <Col md={4}><Button bsStyle="primary">Personal Loans</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Credit Card</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Super Annuation</Button></Col>
-          </Row>
-          <Row className="show-grid">
-            <Col md={4}><Button bsStyle="primary">Term Deposit</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Bonds</Button></Col>
-            <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
-          </Row>
-        </Grid>
-        <Results stars={2} />
+          <div className="App-header">
+            <img src={header} className="App-logo" alt="logo" />
+            <h2>Are you being screwed?</h2>
+          </div>
+          <div className="homeContainer" style={this.state.homeContainerStyle}>
+            <p className="App-intro">
+              Get some help decoding all the financial mumbo-jumbo!
+            </p>
+            {/*<ReactPlayer url='https://www.youtube.com/watch?v=L16ZUH-sCGc' />*/}
+            <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
+            <Grid>
+              <Row className="show-grid">
+                <Col md={4}><Button bsStyle="primary" onClick={this.displayQuestions}>Car Loans</Button></Col>
+                <Col md={4}><Button bsStyle="primary">Home Loans</Button></Col>
+                <Col md={4}><Button bsStyle="primary">Business Loans</Button></Col>
+              </Row>
+              <Row className="show-grid">
+                <Col md={4}><Button bsStyle="primary">Personal Loans</Button></Col>
+                <Col md={4}><Button bsStyle="primary">Credit Card</Button></Col>
+                <Col md={4}><Button bsStyle="primary">Superannuation</Button></Col>
+              </Row>
+              <Row className="show-grid">
+                <Col md={4}><Button bsStyle="primary">Term Deposit</Button></Col>
+                <Col md={4}><Button bsStyle="primary">Bonds</Button></Col>
+                <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
+              </Row>
+            </Grid>
+            <Results stars={2} />
+          </div>
+          <div className='loanQuestionsContainer' style={this.state.loanQuestionsContainer}>
+            <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;
+          </div>
         </div>
       )
     } 
@@ -77,7 +96,7 @@ class App extends Component {
           <p className="App-intro">
             Get some help decoding all the financial mumbo-jumbo!
           </p>
-          <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;    
+              
         </div>
       ) 
   }
