@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     if (this.state.homeView) {
       return (
-        <Grid className="App">
+        <Grid className="App" fluid={true}>
           
           <Row className="App-header">
             <Col md={12}>
