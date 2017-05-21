@@ -23,14 +23,20 @@ test('calculate total repayments for 15000P, 0.03I, 60months, 500 fees  to retur
 
 // test currentIncome 
 test('monthly payments 15000P, 0.03I, 60months,500 fees and current income 900 to be false', () => {
-  expect(loanFactors.isloanTooHigh(15000, 0.03,60,500,900)).toBe(true);
+  expect(loanFactors.isLoanTooHigh(15000, 0.03,60,500,900)).toBe(true);
 });
 
 test('monthly payments 15000P, 0.03I, 60months,0 fees and current income 900 to be true', () => {
-  expect(loanFactors.isloanTooHigh(15000, 0.03,60,0, 900)).toBe(false);
+  expect(loanFactors.isLoanTooHigh(15000, 0.03,60,0, 900)).toBe(false);
 });
 
 // test total income over term length
 test('total income of $8000/month over 60 month term', ()=>{
   expect(loanFactors.incomeOverPeriod(60, 8000)).toBe(480000);
 });
+
+// test percent of Loan to car
+test('percent of loan to car', ()=> {
+  expect(loanFactors.percentOfLoanToCar(30000, 15000)).toBe(0.5);
+});
+
