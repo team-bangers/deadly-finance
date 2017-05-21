@@ -73,7 +73,6 @@ class App extends Component {
           <Row className='IntroVid'>
             <Col md={12}>
               <ReactPlayer className='video' url='https://www.youtube.com/embed/7daI_Btr97A' />
-              <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
             </Col>
           </Row>
           

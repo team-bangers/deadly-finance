@@ -13,41 +13,31 @@ export default function Results(props) {
     switch (props.stars) {   
         case 1:
             gif = (
-                <div>
-                    <img src="https://media.giphy.com/media/5xlLHPGAP8gdG/giphy.gif" width="480" height="270" alt="captain-cooks-coming" />
-                </div>
+                <img src="https://media.giphy.com/media/5xlLHPGAP8gdG/giphy.gif" width="480" height="270" alt="captain-cooks-coming" />
             );
             starCount = 1;
             break;
         case 2:
             gif = (
-                <div>
-                    <img src="https://media.giphy.com/media/13f8ewFYhDugN2/giphy.gif" width="480" height="360" alt="bush-mechanics" />
-                </div>
+                <img src="https://media.giphy.com/media/13f8ewFYhDugN2/giphy.gif" width="480" height="360" alt="bush-mechanics" />
             );
             starCount = 2;
             break;
         case 3:
             gif = (
-                <div>
-                    <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
-                </div>
+                <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
             );
             starCount = 3;
             break;
         case 4:
             gif = (
-                <div>
-                    <img src="https://media.giphy.com/media/RCDSPp9H4EBFu/giphy.gif" width="480" height="270" alt="johnathan-thurston-kicking-goal" /> 
-                </div>
+                <img src="https://media.giphy.com/media/RCDSPp9H4EBFu/giphy.gif" width="480" height="270" alt="johnathan-thurston-kicking-goal" /> 
             );
             starCount = 4;
             break;
         case 5:
             gif= (
-                <div>
-                    <img src="https://media.giphy.com/media/tcCLArPer8L5u/giphy.gif" width="480" height="360" alt="cathy-freeman-winning" />
-                </div>
+                <img src="https://media.giphy.com/media/tcCLArPer8L5u/giphy.gif" width="480" height="360" alt="cathy-freeman-winning" />
             );
             starCount = 5;
             break;
@@ -77,8 +67,12 @@ export default function Results(props) {
 
     return (
         <div>
-            {gif}
-            {starArr.map(element => element)}
+            <div className='inappropriate-gif'>
+                {gif}
+            </div>
+            <div className='stars'>
+                {starArr.map(element => element)}
+            </div>
         </div>
     );
 }
