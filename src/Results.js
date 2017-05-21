@@ -22,7 +22,7 @@ export default function Results(props) {
         case 2:
             gif = (
                 <div>
-                    <img src="https://media.giphy.com/media/GC4KDjKpCvFNS/giphy.gif" width="480" height="360" alt="john-howard" />
+                    <img src="https://media.giphy.com/media/13f8ewFYhDugN2/giphy.gif" width="480" height="360" alt="bush-mechanics" />
                 </div>
             );
             starCount = 2;
