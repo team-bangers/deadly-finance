@@ -8,7 +8,7 @@ const questions = [
     {q: 'Is the dealer adding more last minute accessories in?', type: 'bool'},
     {q: 'are you planning on doing an ownership check?', type: 'bool'},
     {q:'Are there other fees?', type:'bool'},
-    {q: 'do you have to pay before receiving your loan?', type},
+    {q: 'do you have to pay before receiving your loan?', type: 'bool'},
     {q: 'does the loan look sketchy?', type: 'bool'}
 ];
 
