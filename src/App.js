@@ -53,40 +53,60 @@ class App extends Component {
   render() {
     if (this.state.homeView) {
       return (
-        <div className="App">
-          <div className="App-header">
-            <img src={header} className="App-logo" alt="logo" />
-            <h2>Are you being screwed?</h2>
-          </div>
-          <div className="homeContainer" style={this.state.homeContainerStyle}>
-            <p className="App-intro">
-              Get some help decoding all the financial mumbo-jumbo!
-            </p>
-            <ReactPlayer className='video' url='https://www.youtube.com/embed/7daI_Btr97A' />
-            <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
-            <Grid>
-              <Row className="show-grid">
-                <Col md={4}><img src={carLoan} className="product-btn" alt="car-loans" /></Col>
-                <Col md={4}><Button bsStyle="primary">Home Loans</Button></Col>
-                <Col md={4}><Button bsStyle="primary">Business Loans</Button></Col>
-              </Row>
-              <Row className="show-grid">
-                <Col md={4}><Button bsStyle="primary">Personal Loans</Button></Col>
-                <Col md={4}><Button bsStyle="primary">Credit Card</Button></Col>
-                <Col md={4}><Button bsStyle="primary">Superannuation</Button></Col>
-              </Row>
-              <Row className="show-grid">
-                <Col md={4}><Button bsStyle="primary">Term Deposit</Button></Col>
-                <Col md={4}><Button bsStyle="primary">Bonds</Button></Col>
-                <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
-              </Row>
-            </Grid>
-            <Results stars={1} />
-          </div>
-          <div className='loanQuestionsContainer' style={this.state.loanQuestionsContainer}>
-            <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;
-          </div>
-        </div>
+        <Grid className="App">
+          
+          <Row className="App-header">
+            <Col md={12}>
+              <img src={header} className="App-logo" alt="logo" />
+              <h2>Are you being screwed?</h2>
+            </Col>
+          </Row>
+          
+          <Row className=''>
+            <Col md={12}>
+              <p className="App-intro">
+                Get some help decoding all the financial mumbo-jumbo!
+              </p>
+              <ReactPlayer className='video' url='https://www.youtube.com/embed/7daI_Btr97A' />
+              <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
+            </Col>
+          </Row>
+          
+          <Row className="homeContainer" style={this.state.homeContainerStyle}>
+            <Col md={12}>
+                <Grid>
+                  <Row className="show-grid">
+                    <Col md={4}><img src={carLoan} className="product-btn" alt="car-loans" /></Col>
+                    <Col md={4}><Button bsStyle="primary">Home Loans</Button></Col>
+                    <Col md={4}><Button bsStyle="primary">Business Loans</Button></Col>
+                  </Row>
+                  <Row className="show-grid">
+                    <Col md={4}><Button bsStyle="primary">Personal Loans</Button></Col>
+                    <Col md={4}><Button bsStyle="primary">Credit Card</Button></Col>
+                    <Col md={4}><Button bsStyle="primary">Superannuation</Button></Col>
+                  </Row>
+                  <Row className="show-grid">
+                    <Col md={4}><Button bsStyle="primary">Term Deposit</Button></Col>
+                    <Col md={4}><Button bsStyle="primary">Bonds</Button></Col>
+                    <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
+                  </Row>
+                </Grid>
+            </Col>
+          </Row>
+          
+          <Row className=''>
+            <Col md={12}>
+              <Results stars={1} />
+            </Col>
+          </Row>
+          
+          <Row className=''>
+            <Col md={12}>
+              <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />
+            </Col>
+          </Row>
+
+        </Grid>
       )
     } 
       return (
