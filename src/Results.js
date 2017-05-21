@@ -67,12 +67,14 @@ export default function Results(props) {
                             name='star'
                             size='4x'
                             style={{color: 'yellow'}}
+                            key={i}
                         />);
         } else {
             starArr.push(<FontAwesome
                             name='star-o'
                             size='4x'
                             style={{color: 'yellow'}}
+                            key={i}
                         />);
         }
     }
