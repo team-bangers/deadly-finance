@@ -32,3 +32,8 @@
     opacity 1s,
     transform 1s;
 }
+
+.video {
+  margin: 0 auto;
+  padding: 10px;
+}
