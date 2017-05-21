@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import header from './img/fnf-header.png';
+// import header from './img/fnf-header.png';
+import header from './img/fnf-logo2.png';
 import './App.css';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import ReactPlayer from 'react-player'
@@ -55,9 +56,9 @@ class App extends Component {
       return (
         <Grid className="App" fluid={true}>
           
-          <Row className="Header bg-black">
+          <Row className="Header">
             <Col md={12}>
-              <img src={header} className="App-logo" alt="logo" />
+              <img src={header} className="App-logo" alt="logo" width='200'/>
             </Col>
           </Row>
           
@@ -76,7 +77,7 @@ class App extends Component {
             </Col>
           </Row>
           
-          <Row className="Buttons bg-orange" style={this.state.homeContainerStyle}>
+          <Row className="Buttons" style={this.state.homeContainerStyle}>
             <Col md={12}>
                 <Grid>
                   <Row className="show-grid">
