@@ -58,18 +58,18 @@ class App extends Component {
           <Row className="Header">
             <Col md={12}>
               <img src={header} className="App-logo" alt="logo" />
-              <h2>Are you being screwed?</h2>
             </Col>
           </Row>
           
           <Row className='IntroText'>
             <Col md={12}>
+              <h2>Are you being screwed?</h2>
               <p className="App-intro">
                 Get some help decoding all the financial mumbo-jumbo!
               </p>
             </Col>
           </Row>
-          
+
           <Row className='IntroVid'>
             <Col md={12}>
               <ReactPlayer className='video' url='https://www.youtube.com/embed/7daI_Btr97A' />

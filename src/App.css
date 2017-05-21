@@ -2,6 +2,30 @@
   text-align: center;
 }
 
+.App .row.Header {
+  background-color: #CCC;
+}
+
+.App .row.IntroText {
+  background-color: #FFF;
+}
+
+.App .row.IntroVid {
+  background-color: #FFF;
+}
+
+.App .row.Buttons {
+  background-color: #FFF;
+}
+
+.App .row.Stars {
+  background-color: #FFF;
+}
+
+.App .row.Footer {
+  background-color: #CCC;
+}
+
 .App-logo {
   max-width: 500px;
   width: 100%;
