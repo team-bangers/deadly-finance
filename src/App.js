@@ -55,13 +55,13 @@ class App extends Component {
       return (
         <Grid className="App" fluid={true}>
           
-          <Row className="Header">
+          <Row className="Header bg-black">
             <Col md={12}>
               <img src={header} className="App-logo" alt="logo" />
             </Col>
           </Row>
           
-          <Row className='IntroText'>
+          <Row className='IntroText bg-orange'>
             <Col md={12}>
               <h2>Are you being screwed?</h2>
               <p className="App-intro">
@@ -77,7 +77,7 @@ class App extends Component {
             </Col>
           </Row>
           
-          <Row className="Buttons" style={this.state.homeContainerStyle}>
+          <Row className="Buttons bg-orange" style={this.state.homeContainerStyle}>
             <Col md={12}>
                 <Grid>
                   <Row className="show-grid">
