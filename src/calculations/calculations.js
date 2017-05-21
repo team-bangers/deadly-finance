@@ -15,7 +15,7 @@ var loanFactors = {
     calculateTotalRepayment: (principal, interestRate, termLength, fees) => {
         return Math.ceil(termLength*(fees+(principal*(interestRate/12))/(1-Math.pow(1+interestRate/12,-termLength))));
     },
-    isloanTooHigh: (principal, interestRate, termLength, fees, currentIncome) =>{
+    isLoanTooHigh: (principal, interestRate, termLength, fees, currentIncome) =>{
         var monthlyRepayments = fees+Math.ceil((principal*(interestRate/12))/(1-Math.pow(1+interestRate/12,-termLength)));
         if (monthlyRepayments > loanFactors.goodIncomePortion*currentIncome){
             return true;
@@ -24,5 +24,8 @@ var loanFactors = {
     incomeOverPeriod: (termLength, currentIncome) => {
         return currentIncome * termLength;
     },
+    percentOfLoanToCar: (carPrice, loan) => {
+        return loan/carPrice;
+    }, 
 }
 module.exports =loanFactors;
