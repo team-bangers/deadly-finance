@@ -79,7 +79,7 @@ class App extends Component {
                 <Col md={4}><Button bsStyle="primary">Stocks</Button></Col>
               </Row>
             </Grid>
-            <Results stars={2} />
+            <Results stars={1} />
           </div>
           <div className='loanQuestionsContainer' style={this.state.loanQuestionsContainer}>
             <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;
