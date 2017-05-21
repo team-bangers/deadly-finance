@@ -4,15 +4,23 @@ import './App.css';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import ReactPlayer from 'react-player'
 import LoanQuestions from './LoanQuestions';
-// import questions from './questions';
+import questions from './questions';
 import Results from './Results';
+import carLoan from './img/car-loans.png';
 
 class App extends Component {
   constructor () {
     super();
     this.state = {
       homeView: true,
-      answer: 0,
+      resultsView: false,
+      homeContainerStyle: {
+        opacity: 1
+      },
+      loanQuestionsContainer: {
+        opacity: 0
+      },
+      questions,
     };
 
     this.displayQuestions = this.displayQuestions.bind(this);
@@ -21,13 +29,24 @@ class App extends Component {
 
   displayQuestions() {
     this.setState(prevState => ({
-      homeView: !prevState.homeView,
+      // homeView: !prevState.homeView,
+      homeContainerStyle: {
+        opacity: 0,
+        transform: 'translateX(-1000px)'
+      },
+      loanQuestionsContainer: {
+        opacity: 1,
+        transform: 'translateY(-1350px)',
+      }
     }));
   }
 
-  handleSubmit(answer) {
+  handleSubmit(answer, questionIndex) {
+    const question = Object.assign({}, this.state.questions[questionIndex], {a: answer})
+    const newQuestionsArray = this.state.questions.slice(0)
+    newQuestionsArray[questionIndex] = question
     this.setState({
-      answer,
+      questions: newQuestionsArray
     })
   }
 
@@ -47,7 +66,7 @@ class App extends Component {
             <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
             <Grid>
               <Row className="show-grid">
-                <Col md={4}><Button bsStyle="primary" onClick={this.displayQuestions}>Car Loans</Button></Col>
+                <Col md={4}><img src={carLoan} className="product-btn" alt="car-loans" /></Col>
                 <Col md={4}><Button bsStyle="primary">Home Loans</Button></Col>
                 <Col md={4}><Button bsStyle="primary">Business Loans</Button></Col>
               </Row>
@@ -64,6 +83,9 @@ class App extends Component {
             </Grid>
             <Results stars={1} />
           </div>
+          <div className='loanQuestionsContainer' style={this.state.loanQuestionsContainer}>
+            <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />;
+          </div>
         </div>
       )
     } 
@@ -76,7 +98,7 @@ class App extends Component {
           <p className="App-intro">
             Get some help decoding all the financial mumbo-jumbo!
           </p>
-          <LoanQuestions value={this.state.answer} questions={this.state.questions} handleSubmit={this.handleSubmit} />
+              
         </div>
       ) 
   }
