@@ -12,23 +12,38 @@ export default function Results(props) {
     let gif;
     switch (props.stars) {   
         case 1:
-            gif = <p>"Captain cook"</p>;
+            gif = (
+                <div>
+                    <iframe src="https://giphy.com/embed/5xlLHPGAP8gdG" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/capatain-cook-1770-invasion-5xlLHPGAP8gdG">via GIPHY</a></p>
+                </div>
+            );
             starCount = 1;
             break;
         case 2:
             gif = (
                 <div>
-                    <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
+                    <iframe src="https://giphy.com/embed/GC4KDjKpCvFNS" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/john-howard-GC4KDjKpCvFNS">via GIPHY</a></p>
                 </div>
             );
             starCount = 2;
             break;
         case 3:
-            gif = <p>"Something"</p>
+            gif = (
+                <div>
+                    <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
+                </div>
+            );
             starCount = 3;
             break;
         case 4:
-            gif = <p>"Something"</p>
+            gif = (
+                <div>
+                    <iframe src="https://giphy.com/embed/RCDSPp9H4EBFu" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/jt-johnathan-thurston-goal-nrl-RCDSPp9H4EBFu">via GIPHY</a></p>  
+                </div>
+            );
             starCount = 4;
             break;
         case 5:
