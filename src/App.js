@@ -55,24 +55,29 @@ class App extends Component {
       return (
         <Grid className="App" fluid={true}>
           
-          <Row className="App-header">
+          <Row className="Header">
             <Col md={12}>
               <img src={header} className="App-logo" alt="logo" />
               <h2>Are you being screwed?</h2>
             </Col>
           </Row>
           
-          <Row className=''>
+          <Row className='IntroText'>
             <Col md={12}>
               <p className="App-intro">
                 Get some help decoding all the financial mumbo-jumbo!
               </p>
+            </Col>
+          </Row>
+          
+          <Row className='IntroVid'>
+            <Col md={12}>
               <ReactPlayer className='video' url='https://www.youtube.com/embed/7daI_Btr97A' />
               <img src="https://media.giphy.com/media/YaoEnNsrYoBKE/giphy.gif" alt="housewives-of-narromine" width="480" height="264" />
             </Col>
           </Row>
           
-          <Row className="homeContainer" style={this.state.homeContainerStyle}>
+          <Row className="Buttons" style={this.state.homeContainerStyle}>
             <Col md={12}>
                 <Grid>
                   <Row className="show-grid">
@@ -94,18 +99,17 @@ class App extends Component {
             </Col>
           </Row>
           
-          <Row className=''>
+          <Row className='Stars'>
             <Col md={12}>
               <Results stars={1} />
             </Col>
           </Row>
           
-          <Row className=''>
+          <Row className='Footer'>
             <Col md={12}>
               <LoanQuestions questions={this.state.questions} handleSubmit={this.handleSubmit} />
             </Col>
           </Row>
-
         </Grid>
       )
     } 
