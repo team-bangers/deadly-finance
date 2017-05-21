@@ -33,7 +33,12 @@ export default function Results(props) {
             starCount = 4;
             break;
         case 5:
-            gif= <p>"Kathy Freeman"</p>;
+            gif= (
+                <div>
+                    <iframe src="https://giphy.com/embed/tcCLArPer8L5u" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/cathy-freeman-winning-tcCLArPer8L5u">via GIPHY</a></p>
+                </div>
+            );
             starCount = 5;
             break;
         default:
