@@ -12,5 +12,4 @@ const questions = [
     // {q: 'does the loan look sketchy?', type: 'bool'}
 ];
 
-
-export default questions;
+module.exports =questions;
